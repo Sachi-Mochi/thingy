@@ -1,5 +1,70 @@
 <div id="app"></div>
-<button
-type="button">
-Wowi is cute!
-</button>
+<p>I found out how to change the font of paragraphs and stuff!</p>
+<p>so hello</p>
+<strong>are you proud of me?</strong>
+</p></p>
+<body>
+<script>
+// da button
+const wowibutton = document.createElement('button');
+var clickedButton = 0
+wowibutton.innerText = 'CLICK ME RIGHT NOW'
+
+// da button and its various FUNCTION THINGS IDK IT SOUNDS COOL 
+// i also had no other way to host a quick MP3 file so there you go lol
+wowibutton.addEventListener('click',  ()=> {
+
+ var activateButton = new Audio('https://cdn.discordapp.com/attachments/824389135275524147/1068868924134924299/modified_button.mp3')
+ var FirstSound = new Audio('https://cdn.discordapp.com/attachments/824389135275524147/1068814150207275058/you_did_it.mp3')
+ var SecondSound = new Audio('https://cdn.discordapp.com/attachments/824389135275524147/1068842336353792081/Quack.mp3')
+ var FinalSound = new Audio('https://cdn.discordapp.com/attachments/824389135275524147/1068842158557241414/oof.mp3')
+ var Boom = new Audio('https://cdn.discordapp.com/attachments/824389135275524147/1068866007931818025/boom.mp3')
+ var Speak = new Audio('https://cdn.discordapp.com/attachments/824389135275524147/1068840059119353908/mep_map.mp3')
+
+
+
+
+// i am very sure there's a better way to make this SILLY LITTLE SEQUENCE 
+// A WHOLE LOT MORE OPTIMIZED, BUT I WANTED TO LOOK COOL OVERNIGHT OKAY!
+// i won't be surprised if you look at this and are like
+// OH MY......... alright so BLAH BLAH BLAH BLAH 
+// YOU SHOULD PROBABLY REPLACE ALL THOSE TIMEOUTS WITH X
+// idk I JUST EXPECT YOU TO KNOW OF SOME BETTER METHODS OKAY!
+
+// it feels wrong.
+
+
+// disable the button temporarily after a press and check for press count
+wowibutton.disabled = true
+if (clickedButton === 0) {
+FirstSound.play();
+wowibutton.innerText = 'Thank you for clicking me, I was quite stressed!'
+setTimeout(() => { clickedButton += 1, Speak.play(), wowibutton.innerText = 'Wait...' }, 2800);
+setTimeout(() => { Speak.play(), wowibutton.innerText = "I'm feeling the urge again..." },5000 );
+setTimeout(() => { Speak.play(), wowibutton.innerText = "Oh no..." }, 7000);
+setTimeout(() => { Speak.play(), wowibutton.innerText = "My goodness!" }, 8000);
+setTimeout(() => { Speak.play(), wowibutton.disabled = false, wowibutton.innerText = 'CLICK ME RIGHT NOW' }, 8600);
+} else if (clickedButton === 1) {
+// second press!
+SecondSound.play();
+wowibutton.innerText = 'Thank you for clicking me, I lost control for a moment...'
+setTimeout(() => { clickedButton += 1, Speak.play(), wowibutton.innerText = '...' }, 2800);
+setTimeout(() => { Speak.play(), wowibutton.innerText = "I'm feeling the urge yet again!!" },5000 );
+setTimeout(() => { Speak.play(), wowibutton.innerText = "Oh no... Oh no!" }, 7000);
+setTimeout(() => { Speak.play(), wowibutton.innerText = "Goodness gracious, why!" }, 8000);
+setTimeout(() => { Speak.play(), wowibutton.disabled = false, wowibutton.innerText = 'CLICK ME AGAIN, PLEASE' }, 10000);
+} else {
+  // final press!
+activateButton.play()
+setTimeout(() => { Boom.play(), 2000})
+wowibutton.disabled = true
+wowibutton.innerText = '*You caused the button to overload!!'
+setTimeout(() => { clickedButton + 1, FinalSound.play(), wowibutton.innerText = 'x.x' }, 4500);
+}
+})
+
+
+document.body.appendChild(wowibutton)
+</script>
+
+</body>
